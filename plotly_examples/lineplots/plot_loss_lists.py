@@ -3,6 +3,7 @@ from os.path import join
 import plotly.graph_objs as go
 import numpy as np
 
+
 def plot_train_val_losses(training_loss: list, validation_loss: list,
                           save_dir: str = None, 
                           display: bool = False,
@@ -24,8 +25,8 @@ def plot_train_val_losses(training_loss: list, validation_loss: list,
     """
     x_values = list(np.arange(1, len(training_loss)+1))
 
-    train_trace = go.Scatter(x=x_values, y=train_loss, mode='lines+markers', name='training_loss')
-    val_trace = go.Scatter(x=x_values, y=val_loss, mode='lines+markers', name='validation_loss')
+    train_trace = go.Scatter(x=x_values, y=training_loss, mode='lines+markers', name='training_loss')
+    val_trace = go.Scatter(x=x_values, y=validation_loss, mode='lines+markers', name='validation_loss')
 
     fig = go.Figure()
     fig.add_trace(train_trace)
